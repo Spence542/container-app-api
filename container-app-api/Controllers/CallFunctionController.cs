@@ -29,7 +29,7 @@ namespace container_app_api.Controllers
             {
                 _logger.LogError($"response: {result.StatusCode}  for request with neonhealthsolutions domain");
             }
-            return Ok();
+            return Ok($"request to domain: https://givemedata.neonhealthsolutions.com/api/givemedata?requestUrl=neonhealthsolutions \nresults in: {result.StatusCode}");
         }
 
         [HttpGet("GetDataFromFunctionsAppDifferentDomain")]
@@ -45,7 +45,7 @@ namespace container_app_api.Controllers
             {
                 _logger.LogError($"response: {result.StatusCode} for request with azurewebsites domain");
             }
-            return Ok();
+            return Ok($"request to domain: https://give-me-data-test-app.azurewebsites.net/api/givemedata?requestUrl=azurewebsites \nresults in: {result.StatusCode}");
         }
     }
 }
