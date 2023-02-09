@@ -1,3 +1,5 @@
+using container_app_api;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,6 +10,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
+
+builder.Services.AddSingleton<NetEventListener>();
 
 var app = builder.Build();
 

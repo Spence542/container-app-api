@@ -6,14 +6,16 @@ namespace container_app_api.Controllers
     [Route("[controller]")]
     public class CallFunctionController : ControllerBase
     {
-
+        
         private readonly ILogger<CallFunctionController> _logger;
         private readonly HttpClient _httpClient;
+        private readonly NetEventListener _netEventListener;
 
-        public CallFunctionController(ILogger<CallFunctionController> logger, HttpClient httpClient)
+        public CallFunctionController(ILogger<CallFunctionController> logger, HttpClient httpClient, NetEventListener netEventListener)
         {
             _logger = logger;
             _httpClient = httpClient;
+            _netEventListener = netEventListener;
         }
 
         [HttpGet("GetDataFromFunctionsAppSameDomain")]
